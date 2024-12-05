@@ -6,6 +6,51 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create([
+  {
+    name: 'Derrick'
+    email: 'derrickloo@acme.com'
+    password: 'secret'
+    password_confirmation: 'secret'
+    admin: true
+  }
+])
+Genre.create!([
+  {
+    name: 'Action'
+  },
+  {
+    name: 'Adventure'
+  },
+  {
+    name: 'Animation'
+  },
+  {
+    name: 'Comedy'
+  },
+  {
+    name: 'Documentary'
+  },
+  {
+    name: 'Drama'
+  },
+  {
+    name: 'Fantasy'
+  },
+  {
+    name: 'Horror'
+  },
+  {
+    name: 'Romance'
+  },
+  {
+    name: 'Sci-Fi'
+  },
+  {
+    name: 'Thriller'
+  }
+])
+
 Movie.create!([
   {
     title: 'Avengers: Endgame',
