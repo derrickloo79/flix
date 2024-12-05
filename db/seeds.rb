@@ -172,5 +172,44 @@ Movie.create!([
     director: "Patty Jenkins",
     duration: "141 min",
     image_file_name: "wonder-woman.png"
+  },
+  {
+    title: "Hulk",
+    description:
+    %{
+      Bruce Banner transforms into a raging green monster when he gets angry.
+    }.squish,
+    released_on: "2003-06-20",
+    rating: "PG-13",
+    total_gross: 821_847_012,
+    director: "Ang Lee",
+    duration: "138 min",
+    image_file_name: "hulk.png"
+  },
+  {
+    title: "Kraven the Hunter",
+    description:
+    %{
+      Kraven's complex relationship with his ruthless father, Nikolai Kravinoff, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.
+    }.squish,
+    released_on: "2024-12-13",
+    rating: "NC-17",
+    total_gross: 1,
+    director: "J.C. Chandor",
+    duration: "127 min",
+    image_file_name: "kraven.jpg"
+  },
+  {
+    title: "Captain America: Brave New World",
+    description:
+    %{
+      Kraven's complex relationship with his ruthless father, Nikolai Kravinoff, starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.
+    }.squish,
+    released_on: "2024502-14",
+    rating: "PG",
+    total_gross: 1,
+    director: "Julius Onah",
+    duration: "126 min",
+    image_file_name: "captain-america-brave-new-world.png"
   }
 ])
