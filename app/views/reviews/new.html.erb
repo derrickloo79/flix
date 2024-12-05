@@ -1,0 +1,5 @@
+<h1>Adding New Review for <%= link_to @movie.title, @movie %></h1>
+
+<%= render "form" , movie: @movie, review: @review %>
+
+<%= link_to "Cancel", movie_path(@movie), class: "btn btn-outline-primary", style: "width: 100%; max-width: 503px; margin-top: 8px" %>

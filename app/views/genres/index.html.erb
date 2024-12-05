@@ -1,0 +1,15 @@
+<h1><%= pluralize(@genres.size, "Genre") %></h1>
+
+<% @genres.each do |g| %>
+    <div style="padding: 12px 0">
+        <h3><%= link_to g.name, g %></h3>
+        <%= link_to "Edit", edit_genre_path(g), class: "btn btn-outline-primary btn-sm" %>
+        <%= link_to "Delete", genre_path(g), class: "btn btn-outline-danger btn-sm",
+                        data: { turbo_method: :delete, turbo_confirm: "Really?!" } %>
+    </div>
+<% end %>
+
+<section class="admin">
+    <%= link_to "Add New Genre", new_genre_path, class: "button" %>
+</section>
+

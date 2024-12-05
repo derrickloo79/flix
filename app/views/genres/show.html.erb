@@ -1,0 +1,11 @@
+<section style="padding-bottom: 20px">
+  <%= link_to "< Back", genres_path, class: "btn btn-outline-secondary btn-sm" %>
+</section>
+
+<h1><%= pluralize(@movies.size, "Event") %> under <%= @genre.name%> Category</h1>
+
+<div class="favorite-movies">
+    <% @movies.each do |movie| %>
+    <%= link_to image_tag(movie.image_file_name), movie %>
+    <% end %>
+</div>

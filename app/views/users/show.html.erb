@@ -1,0 +1,52 @@
+<section style="padding-bottom: 20px">
+  <%= link_to "< Back", users_path, class: "btn btn-outline-secondary btn-sm" %>
+</section>
+
+<section class="user">
+    <%= profile_image(@user) %>
+    <h1> <%= @user.name%> </h1>
+    <h2> <%= mail_to(@user.email) %> </h2>
+    <h3>Member Since</h3>
+    <p>
+        <%= @user.created_at.strftime("%B %Y") %>
+    </p>
+
+    <div>
+        <% if current_user?(@user) %>
+            <%= link_to "Edit", edit_user_path(@user), class: "button edit" %>
+        <% end %>
+        <% if current_user_admin? %>
+            <%= link_to "Delete", @user, class: "button delete",
+                    data: { turbo_method: :delete, turbo_confirm: "Really?!" } %>
+        <% end %>
+    </div>
+
+    <% if @reviews.present? %>
+      <h3>My Reviews (<%= @reviews.size %>)</h3>
+        <% @reviews.each do |review| %>
+            <div class="review">
+                <div class="details">
+                <span class="title">
+                    <%= link_to review.movie.title, review.movie %>
+                </span>
+                <%= render "shared/stars", percent: review.stars_as_percent %>
+                <span class="date">
+                    <%= time_ago_in_words(review.created_at) %> ago
+                </span>
+                <p>
+                    <%= review.comment %>
+                </p>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
+
+    <% if @fav_movies.present? %>
+        <h3>Favorite Movies</h3>
+        <div class="favorite-movies">
+            <% @fav_movies.each do |movie| %>
+            <%= link_to image_tag(movie.image_file_name), movie %>
+            <% end %>
+        </div>
+    <% end %>
+</section>
