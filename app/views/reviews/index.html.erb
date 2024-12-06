@@ -3,14 +3,15 @@
 <ul class="reviews">
     <% @reviews.each do |review| %>
         <li>
-            <%= render "shared/stars", percent: review.stars_as_percent %>
             <p>
                 <%= profile_image(review.user,35) %> <%= link_to review.user.name, review.user %>
                 <span class="date">
                 <%= time_ago_in_words(review.created_at) %> ago
                 </span>
             </p>
-            <p>
+
+            <%= render "shared/stars", percent: review.stars_as_percent %>
+            <p style="margin-top: 8px">
                 <%= review.comment %>
             </p>
             <% if current_user?(review.user) %>
